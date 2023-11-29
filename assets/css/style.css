@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+* {
+    font-family: 'Kanit', sans-serif;
+
+}
+#app {
+    height: 100dvh;
+}
+#navbar {
+    background-color: #FFDC34;
+}
+
+.logo-mobile {
+    max-width: 50px;
+}
+
+.logo-desktop {
+    max-width: 200px;
+}
+
+#content-1 {
+    background-color: #FFDC34;
+}
+
+.desc {
+    text-indent: 30px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 400;
+}
+
+.service {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    font-weight: 700;
+    border-radius: 20px;
+    border-color: #FFDC34;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #FFDC34;
+    text-align: center;
+    height: 100px;
+    color: #393E46;
+}
+
+.service:hover {
+    background-color: #fff;
+
+}
+
+#recommend {
+    background-color: #FFDC34;
+    height: 50dvh;
+
+}
+
+.serv {
+    max-width: 150px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
