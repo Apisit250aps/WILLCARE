@@ -4,9 +4,7 @@
     font-family: 'Kanit', sans-serif;
 
 }
-#app {
-    height: 100dvh;
-}
+
 #navbar {
     background-color: #FFDC34;
 }
@@ -54,7 +52,7 @@
 
 #recommend {
     background-color: #FFDC34;
-    
+    height: 100%;
 
 }
 
