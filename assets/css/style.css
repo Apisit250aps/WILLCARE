@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('./login.css');
+
 
 * {
     font-family: 'Kanit', sans-serif;
@@ -71,4 +73,9 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+
+#app {
+    height: 100%;
 }
