@@ -12,10 +12,52 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
+   
     <main id="app" class="">
+         <!-- Button trigger modal -->
+    <button type="button" id="active-ads" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    hidden>
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content bg-transparent border-0 ">
+            
+            <div class="modal-body  border-0">
+                <div id="carouselExampleFade-2" class="carousel slide" id="add-1-content">
+                    <!-- <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+
+                    </div> -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item" :class="{ 'active':index==0 }" v-for="(item, index) in ads"
+                            :key="index">
+                            <div class="ads-content" :style="`background-color: ${item};`">{{item}}</div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-2"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade-2"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
         <nav class="navbar navbar-expand-lg shadow-sm pt-4" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -73,93 +115,155 @@
                             </li>
 
                         </ul>
-
                     </div>
                 </div>
             </div>
         </nav>
-        <!--  -->
-        <section class="container py-2" >
-            <div class="row row-cols-1 row-cols-lg-2 m-auto align-items-center g-3" >
-                <div class="col">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                        <div class="carousel-inner rounded-2">
-                            <div class="carousel-item active">
-                                <img src="./assets/img/carousels/o1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <section id="container" class="row">
+            <div class="col-2 px-3 py-3" id="side">
+                <ul>
+                    <li>
+                        <b>แนะนำ</b>
+                        <ul>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>บริการ</b>
+                        <ul>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>สิทธิพิเศษ</b>
+                        <ul>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>ใช้บ่อย</b>
+                        <ul>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                            <li>menu</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-8 pt-3" id="content">
+                <div class="row g-1">
+                    <div id="ads-1" class="col-8">
+                        <div id="carouselExampleFade" class="carousel slide " id="add-1-content" data-bs-ride="true">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions"
+                                    v-for="(item, index) in ads" :key="index" :data-bs-slide-to="`${index}`"
+                                    class="active bg-dark" aria-current="true"
+                                    :aria-label="`Slide ${index+1}`"></button>
+
                             </div>
-                            <div class="carousel-item">
-                                <img src="./assets/img/carousels/o2.jpg" class="d-block w-100 img-fluid" alt="...">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" :class="{ 'active':index==0 }" v-for="(item, index) in ads"
+                                    :key="index" >
+                                    <div class="ads-content" :style="`background-color: ${item};`">
+                                        Ads content
+                                    </div>
+                                </div>
                             </div>
-                            <div class="carousel-item">
-                                <img src="./assets/img/carousels/o3.jpg" class="d-block w-100 img-fluid" alt="...">
-                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                    </div>
+                    <div id="ads-2" class="col-4">
+                        <div id="carouselExampleFade-1" class="carousel slide" id="add-1-content"  data-bs-ride="true"> 
+                            <!-- <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+    
+                            </div> -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item" :class="{ 'active':index==0 }" v-for="(item, index) in ads"
+                                    :key="index">
+                                    <div class="ads-content" :style="`background-color: ${item};`">
+                                        Ads content
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade-1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade-1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="row row-cols-1 m-auto">
-                        <div class="col">
-                            <h2 class=" fw-semibold">WILL CARE</h2>
-                            <hr>
-                            <p class="desc">
-                                การดูแลผู้สูงอายุอย่างเหมาะสมเป็นสิ่งสำคัญ ผู้สูงอายุเป็นกลุ่มคนที่มีอายุมากแล้ว ร่างกายและจิตใจเริ่มเสื่อมถอยลง จึงต้องการการดูแลเอาใจใส่เป็นพิเศษในด้านต่าง ๆ
-                            </p>
-                            <p class="desc">
-                                บริการดูแลผู้สูงอายุของเรา จะช่วยให้คุณมั่นใจได้ว่าผู้สูงอายุของคุณจะได้รับการดูแลอย่างมืออาชีพ อุ่นใจ ปลอดภัย ไร้กังวล
-                            </p>
-                            <p class="desc">
-                                เรามีทีมผู้ดูแลผู้สูงอายุที่มีประสบการณ์และได้รับการอบรมมาเป็นอย่างดี มีความรู้ความเข้าใจด้านการดูแลผู้สูงอายุเป็นอย่างดี สามารถดูแลผู้สูงอายุได้อย่างถูกต้องและเหมาะสม
-                            </p>
+                <!--  -->
+                <div class="mt-2" id="service-list">
+                    <div class="row g-3 m-auto">
+                        <div class="col-4">
+                            <div class="box border border-1 rounded-2 shadow-sm" style="background-color: #E6E6FA;">
+                                <b>บริการของเรา</b>
+
+                            </div>
                         </div>
-                        <div class="col">
-                            <h3 class=" fw-semibold">บริการ</h3>
-                            <hr>
-                            <div class="row row-cols-1 row-cols-lg-2 m-auto g-3">
-                                <div class="col">
-                                    <a href="" class="nav-link service shadow-sm">ดูแลฉัน</a>
-                                </div>
-                                <div class="col">
-                                    <a href="" class="nav-link service shadow-sm">ไปหาหมอ</a>
-                                </div>
+                        <div class="col-4">
+                            <div class="box border border-1 rounded-2 shadow-sm" style="background-color: #F0F8FF;">
+                                <b>บริการของเรา</b>
+
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box border border-1 rounded-2 shadow-sm" style="background-color: #FFFFE0;">
+                                <b>บริการของเรา</b>
                             </div>
                         </div>
                     </div>
+                    <div class="row g-3 m-auto">
+                        <div class="col">
+                            <div class="box border border-1 rounded-2 shadow-sm" style="background-color: #F5F5DC;">
+                                <b>แบนเนอร์ของเรา</b>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="intro" class="row mt-5 rounded-2">
+
                 </div>
             </div>
-        </section>
-        <section id="recommend" class="mt-1">
-            <div class="container py-3">
-                <h2 class=" fw-semibold">ทำไมถึงให้เราดูแล</h2>
-                <hr>
-                <div class="row row-cols-1 row-cols-lg-3 m-auto ">
-                    <div class="col justify-content-center d-flex flex-column align-items-center">
-                        <img src="./assets/img/whyme/1.png" alt="" class="serv img-fluid">
-                        <h2 class="fw-bold py-3">ดูแลอย่างใกล้ชิด</h2>
-                    </div>
+            <div class="col-2" id="menu"></div>
 
-                    <div class="col justify-content-center d-flex flex-column align-items-center">
-                        <img src="./assets/img/whyme/2.png" alt="" class="serv img-fluid">
-                        <h2 class="fw-bold py-3">ดูแลอย่างมืออาชีพ เชื่อถือได้</h2>
-                    </div>
-
-                    <div class="col justify-content-center d-flex flex-column align-items-center">
-                        <img src="./assets/img/whyme/3.png" alt="" class="serv img-fluid">
-                        <h2 class="fw-bold py-3">ใส่ใจสุขภาพผู้สูงอายุ</h2>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
+    <script src="./assets/js/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 </body>
 

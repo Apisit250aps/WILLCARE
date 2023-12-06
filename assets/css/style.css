@@ -19,48 +19,6 @@
     max-width: 200px;
 }
 
-#content-1 {
-    background-color: #FFDC34;
-}
-
-.desc {
-    text-indent: 30px;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 1);
-    font-weight: 400;
-}
-
-.service {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: auto;
-    font-weight: 700;
-    border-radius: 20px;
-    border-color: #FFDC34;
-    border-style: solid;
-    border-width: 2px;
-    background-color: #FFDC34;
-    text-align: center;
-    height: 100px;
-    color: #393E46;
-}
-
-.service:hover {
-    background-color: #fff;
-
-}
-
-#recommend {
-    background-color: #FFDC34;
-    height: 100%;
-
-}
-
-.serv {
-    max-width: 150px;
-}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 *::-webkit-scrollbar {
@@ -75,7 +33,61 @@
     /* Firefox */
 }
 
+body {
+    /* height: 100vh; */
+    overflow-y: hidden;
+}
 
 #app {
+    /* height: 100vh; */
+    /* background-color: red; */
+}
+
+#container > div {
+    /* height: 100vh; */
+    /* border: #FFDC34 solid 1px; */
+}
+
+#content {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.carousel-item {
+    /* width: 500px; */
+    height: 250px;
+}
+.ads-1, .ads-2, .ads-3 {
+    /* width: 100%;
+    height: 100%; */
+
+}
+
+.ads-content {
+    /* background-color: #FFDC34; */
+    width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#service-list {
+    height: 300px;
+    width: 100%;
+    /* border: 1px red solid; */
+}
+
+.box {
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#intro {
+    height: 100dvh;
+    background-color: #FFE4C4;
 }
